@@ -10,7 +10,7 @@ import java.util.Objects;
 @DiscriminatorValue("Publication")
 public abstract class PublicationEntity extends ProductEntity {
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String title;
 
     @Column(name = "copies")

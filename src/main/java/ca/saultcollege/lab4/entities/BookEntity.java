@@ -8,7 +8,7 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("Book") // 1. Specifies the value for this subclass in the discriminator column
 public class BookEntity extends PublicationEntity {
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String author;
 
     public BookEntity() {

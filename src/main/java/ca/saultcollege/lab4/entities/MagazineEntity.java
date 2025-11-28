@@ -2,6 +2,7 @@ package ca.saultcollege.lab4.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -10,13 +11,12 @@ public class MagazineEntity extends PublicationEntity {
 //    @Column(nullable = false)
     private int orderQty;
 
-    @Temporal(TemporalType.DATE)
-    private Date currentIssue;
+    private LocalDate currentIssue;
 
     public MagazineEntity() {
     }
 
-    public MagazineEntity(int orderQty, Date currentIssue, String title, double price, int copies) {
+    public MagazineEntity(int orderQty, LocalDate currentIssue, String title, double price, int copies) {
         super(title, price, copies);
         this.orderQty = orderQty;
         this.currentIssue = currentIssue;
@@ -30,11 +30,11 @@ public class MagazineEntity extends PublicationEntity {
         this.orderQty = orderQty;
     }
 
-    public Date getCurrentIssue() {
+    public LocalDate getCurrentIssue() {
         return currentIssue;
     }
 
-    public void setCurrentIssue(Date currentIssue) {
+    public void setCurrentIssue(LocalDate currentIssue) {
         this.currentIssue = currentIssue;
     }
 

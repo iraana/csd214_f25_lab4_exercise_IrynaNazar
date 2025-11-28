@@ -13,8 +13,8 @@ public class TicketEntity extends ProductEntity {
     public TicketEntity() {
     }
 
-    public TicketEntity(String description, double price) {
-        super(description, price);
+    public TicketEntity(String name, String description, double price) {
+        super(name, price);
         this.description = description;
     }
 
