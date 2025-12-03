@@ -1,25 +1,17 @@
-package ca.saultcollege.lab4;
+package ca.saultcollege.lab4.repositories;
 
 import ca.saultcollege.lab4.entities.BookEntity;
-import ca.saultcollege.lab4.repositories.BookEntityRepository;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Transactional(propagation = Propagation.NOT_SUPPORTED)
-public class BookEntityRepositoryTest {
+class BookEntityRepositoryTest2 {
 
     @Autowired
     private BookEntityRepository bookRepository;
@@ -96,4 +88,5 @@ public class BookEntityRepositoryTest {
         List<BookEntity> remainingBooks = bookRepository.findByAuthor("Julius Caesar");
         assertEquals(1, remainingBooks.size()); // book2 should still exist
     }
+
 }
