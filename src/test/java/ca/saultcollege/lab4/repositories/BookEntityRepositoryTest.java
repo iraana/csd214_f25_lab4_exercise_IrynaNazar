@@ -80,11 +80,12 @@ public class BookEntityRepositoryTest {
         assertEquals(book1.getTitle(), retrievedBook.getTitle());
 
         // ------------------ UPDATE ------------------
-        retrievedBook.setPrice(retrievedBook.getPrice() + 5);
+        double oldPrice = retrievedBook.getPrice();
+        retrievedBook.setPrice(oldPrice + 5);
         bookRepository.save(retrievedBook);
 
         BookEntity updatedBook = bookRepository.findById(book1.getId()).orElseThrow();
-        assertEquals(book1.getPrice() + 5, updatedBook.getPrice());
+        assertEquals(oldPrice + 5, updatedBook.getPrice());
 
         // ------------------ DELETE ------------------
         bookRepository.deleteById(book1.getId());
